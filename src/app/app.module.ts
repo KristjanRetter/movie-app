@@ -5,6 +5,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { EffectsModule } from '@ngrx/effects';
 import { Store } from '@ngrx/store';
 import { StoreModule } from '@ngrx/store';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -28,7 +29,8 @@ import { reducer } from './store/reducers/movies.reducer';
     AppRoutingModule,
     ReactiveFormsModule,
     EffectsModule.forRoot([MovieEffects]),
-    StoreModule.forRoot({ movies: reducer })
+    StoreModule.forRoot({ movies: reducer }),
+    BrowserAnimationsModule,
   ],
   providers: [
     AppService,
