@@ -1,4 +1,4 @@
-import { Movie } from '../models/movie.model';
+import { Movie } from './movie.model';
 import { createAction, props } from '@ngrx/store';
 
 export const GetMovies = createAction(
@@ -10,3 +10,9 @@ export const GetMoviesSuccess = createAction(
     '[OMDb API] - get movies success',
     props<{ payload: Movie[] }>()
 );
+
+export const SetSearchWord = createAction(
+    '[SEARCH] - set search word',
+    props<{ payload: string }>()
+);
+

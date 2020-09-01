@@ -1,21 +1,23 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { AppService } from 'src/app/app.service';
+import { MovieService } from 'src/app/app.service';
+import { Movie } from 'src/app/store/movie.model';
 
 @Component({
-  selector: 'app-movie-detail',
-  templateUrl: './movie-detail.component.html',
-  styleUrls: ['./movie-detail.component.sass']
+    selector: 'app-movie-detail',
+    templateUrl: './movie-detail.component.html',
+    styleUrls: ['./movie-detail.component.sass'],
 })
+
 export class MovieDetailComponent implements OnInit {
+    constructor(private route: ActivatedRoute, public movieService: MovieService) {}
 
-  constructor(private route: ActivatedRoute, public appService: AppService) { }
-  movieDetail: any;
-  ngOnInit(): void {
-    const id = this.route.snapshot.paramMap.get('id');
-    this.appService.getMovieDetail(id).subscribe(response => this.movieDetail = response);
+    movieDetail: Movie;
 
-
-  }
-
+    ngOnInit(): void {
+        const id = this.route.snapshot.paramMap.get('id');
+        this.movieService
+            .getMovieDetail(id)
+            .subscribe((response) => (this.movieDetail = response));
+    }
 }

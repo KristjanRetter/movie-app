@@ -1,6 +1,14 @@
-
-.movies-list 
+.movies-section 
     display: flex
-    flex-wrap: wrap
-    max-width: 1600px
-    margin-top: 70px
+    align-items: center
+    flex-direction: column
+    .list
+        display: flex
+        flex-wrap: wrap
+        max-width: 80rem
+        margin-top: 4rem
+        justify-content: center
+
+@media (max-width: 600px)
+    .list 
+        margin-top: 2rem

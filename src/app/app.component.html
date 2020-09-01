@@ -1,14 +1,4 @@
 <div class="app">
-  <h1>Movie finder</h1>
-  <form [formGroup]="searchForm"  (ngSubmit)="onSubmit()">
-    <input class="input" id="name" type="text" formControlName="name">
-    <button class="button" type="submit">
-      <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="none">
-        <path d="M39.756 37.4l-11.62-11.62a15.75 15.75 0 003.53-9.947C31.667 7.103 24.565 0 15.834 0 7.103 0 0 7.103 0 15.833s7.103 15.834 15.833 15.834c3.766 0 7.226-1.327 9.946-3.53L37.4 39.755a.834.834 0 001.179 0l1.178-1.178a.834.834 0 000-1.179zm-23.923-9.067c-6.893 0-12.5-5.607-12.5-12.5s5.607-12.5 12.5-12.5 12.5 5.607 12.5 12.5-5.607 12.5-12.5 12.5z" fill="#000"/>
-      </svg>
-    </button>
-  
-  </form>
-
+  <app-search-form></app-search-form>
   <router-outlet></router-outlet>
 </div>
