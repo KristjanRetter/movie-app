@@ -1,21 +1,19 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
+import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
-import { EffectsModule } from '@ngrx/effects';
-import { Store } from '@ngrx/store';
-import { StoreModule } from '@ngrx/store';
+import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import { EffectsModule } from '@ngrx/effects';
+import { StoreModule } from '@ngrx/store';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { MovieService } from './app.service';
-import { ListItemComponent } from './pages/movie-list/components/list-item/list-item.component';
+import { SearchFormComponent } from './components/search-form/search-form.component';
+import { MovieService } from './movie.service';
 import { MovieDetailComponent } from './pages/movie-detail/movie-detail.component';
+import { ListItemComponent } from './pages/movie-list/components/list-item/list-item.component';
 import { MovieListComponent } from './pages/movie-list/movie-list.component';
 import { MovieEffects } from './store/movie.effect';
 import { reducerMovies } from './store/movies.reducer';
-import { SearchFormComponent } from './components/search-form/search-form.component';
 
 @NgModule({
   declarations: [
@@ -39,4 +37,5 @@ import { SearchFormComponent } from './components/search-form/search-form.compon
   ],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }

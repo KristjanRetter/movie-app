@@ -1,5 +1,6 @@
-import { Movie } from './movie.model';
 import { createAction, props } from '@ngrx/store';
+
+import { Movie } from './movie.model';
 
 export const GetMovies = createAction(
     '[OMDb API] - get movies',

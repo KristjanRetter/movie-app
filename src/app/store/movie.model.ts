@@ -52,5 +52,3 @@ export interface MovieDetailResponse {
     Website: string;
     Response: boolean;
   }
-
-

@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+
 import { Movie } from 'src/app/store/movie.model';
 
 @Component({

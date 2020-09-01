@@ -1,11 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
-import { Store, select } from '@ngrx/store';
-import { Router, ActivatedRoute } from '@angular/router';
-import { State } from 'src/app/store/movies.reducer';
+import { FormControl, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
+import { select, Store } from '@ngrx/store';
+
 import { GetMovies, SetSearchWord } from 'src/app/store/movie.actions';
-import { PartialObserver, CompletionObserver, Observable } from 'rxjs';
-import { Movie } from 'src/app/store/movie.model';
+import { State } from 'src/app/store/movies.reducer';
 
 @Component({
   selector: 'app-search-form',
