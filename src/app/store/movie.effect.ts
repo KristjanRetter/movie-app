@@ -7,18 +7,23 @@ import { MovieService } from '../movie.service';
 
 @Injectable()
 export class MovieEffects {
-    constructor(private actions$: Actions, private moviesService: MovieService) { }
+  constructor(private actions$: Actions, private moviesService: MovieService) {}
 
-    loadMovies$ = createEffect(() => this.actions$.pipe(
-        ofType('[OMDb API] - get movies'),
-        mergeMap(({ payload }) => this.moviesService.getMovies(payload)
-            .pipe(
-                map(movies => ({ type: '[OMDb API] - get movies success', payload: movies.Search })),
-                catchError(err => {
-                    console.log(err);
-                    return throwError(err);
-                })
-            ))
+  loadMovies$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType('[OMDb API] - get movies'),
+      mergeMap(({ payload }) =>
+        this.moviesService.getMovies(payload).pipe(
+          map((movies) => ({
+            type: '[OMDb API] - get movies success',
+            payload: movies.Search,
+          })),
+          catchError((err) => {
+            console.log(err);
+            return throwError(err);
+          })
         )
-    );
+      )
+    )
+  );
 }

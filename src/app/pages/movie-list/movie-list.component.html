@@ -1,7 +1,7 @@
 <section class="movies-section">
-    <ul class="list">
-        <li @fade *ngFor="let movie of movies">
-            <app-list-item [movie] = "movie"></app-list-item>
-        </li>
-    </ul>
+  <ul class="list">
+    <li @fade *ngFor="let movie of movies">
+      <app-list-item [movie]="movie"></app-list-item>
+    </li>
+  </ul>
 </section>

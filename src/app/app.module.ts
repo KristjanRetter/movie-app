@@ -31,13 +31,10 @@ import { ButtonComponent } from './components/button/button.component';
     AppRoutingModule,
     ReactiveFormsModule,
     EffectsModule.forRoot([MovieEffects]),
-    StoreModule.forRoot({ movies: reducerMovies}),
+    StoreModule.forRoot({ movies: reducerMovies }),
     BrowserAnimationsModule,
   ],
-  providers: [
-    MovieService,
-  ],
-  bootstrap: [AppComponent]
+  providers: [MovieService],
+  bootstrap: [AppComponent],
 })
-
-export class AppModule { }
+export class AppModule {}

@@ -12,9 +12,8 @@ describe('ButtonComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ButtonComponent ]
-    })
-    .compileComponents();
+      declarations: [ButtonComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {
@@ -33,5 +32,5 @@ describe('ButtonComponent', () => {
     spyOn(component.press, 'emit');
     button.nativeElement.click();
     expect(component.press.emit).toHaveBeenCalled();
- });
+  });
 });
