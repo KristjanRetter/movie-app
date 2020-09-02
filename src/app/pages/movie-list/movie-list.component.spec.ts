@@ -1,5 +1,4 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { MovieListComponent } from './movie-list.component';
 import { RouterTestingModule } from '@angular/router/testing';
 import { MovieService } from 'src/app/movie.service';

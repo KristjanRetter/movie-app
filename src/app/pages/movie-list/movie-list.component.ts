@@ -2,7 +2,6 @@ import { animate, style, transition, trigger } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { select, Store } from '@ngrx/store';
-
 import { MovieService } from 'src/app/movie.service';
 import { GetMovies, SetSearchWord } from 'src/app/store/movie.actions';
 import { Movie } from 'src/app/store/movie.model';

@@ -4,7 +4,7 @@ import { MovieResponse, MovieDetailResponse } from './store/movie.model';
 
 @Injectable()
 export class MovieServiceMock {
-  getMovies(searchWord: string): Observable<MovieResponse> {
+  getMovies(): Observable<MovieResponse> {
     return of({
       Search: [
         {
@@ -20,7 +20,7 @@ export class MovieServiceMock {
     });
   }
 
-  getMovieDetail(id: string): Observable<MovieDetailResponse> {
+  getMovieDetail(): Observable<MovieDetailResponse> {
     return of({
       Title: 'string',
       Year: 'string',

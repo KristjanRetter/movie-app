@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { select, Store } from '@ngrx/store';
-
 import { GetMovies, SetSearchWord } from 'src/app/store/movie.actions';
 import { State } from 'src/app/store/movies.reducer';
 import { Movie } from 'src/app/store/movie.model';
@@ -18,7 +17,6 @@ export class SearchFormComponent implements OnInit {
   searchForm = new FormGroup({
     name: new FormControl(''),
   });
-  searchWord: string;
   movies: Movie[];
   error = false;
   isSubmitted = false;
@@ -30,9 +28,9 @@ export class SearchFormComponent implements OnInit {
   getMovies(): void {
     this.store.pipe(select('movies')).subscribe((response: any) => {
       if (response) {
-        this.searchWord = response.searchWord;
+        this.searchForm.setValue({name: response.searchWord});
         this.movies = response.movies;
-        this.error = !this.searchWord || !this.movies;
+        this.error = !this.searchForm.value.name || !this.movies;
       }
     });
   }
@@ -42,7 +40,7 @@ export class SearchFormComponent implements OnInit {
     this.store.dispatch(SetSearchWord({ payload: this.searchForm.value.name }));
     this.isSubmitted = true;
     this.getMovies();
-    if (this.searchWord) {
+    if (this.searchForm.value.name) {
       this.router.navigate([`movies/${this.searchForm.value.name}`]);
     }
   }

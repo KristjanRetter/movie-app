@@ -1,5 +1,4 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { SearchFormComponent } from './search-form.component';
 import { RouterTestingModule } from '@angular/router/testing';
 import { StoreModule } from '@ngrx/store';
@@ -23,8 +22,7 @@ describe('SearchFormComponent', () => {
   });
 
   it('should create', () => {
-    component.movies = []
-    component.searchWord = 'new';
+    component.movies = [];
     fixture.detectChanges();
     expect(component).toBeTruthy();
   });
