@@ -29,7 +29,7 @@ export class MovieListComponent implements OnInit {
     movies: Movie[];
 
     ngOnInit(): void {
-        this.store.pipe(select('movies')).subscribe((response: any) => this.movies = response.movies);
+        this.store.pipe(select('movies')).subscribe((response: any) => {this.movies = response ? response.movies : null; });
         this.searchWord = this.route.snapshot.paramMap.get('searchWord');
         this.store.dispatch(SetSearchWord({ payload: this.searchWord }));
         this.store.dispatch(GetMovies({ payload: this.searchWord }));

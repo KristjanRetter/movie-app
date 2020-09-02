@@ -29,10 +29,10 @@ export class MovieDetailComponent implements OnInit {
         const id = this.route.snapshot.paramMap.get('id');
         this.movieService
             .getMovieDetail(id)
-            .subscribe((response) => (this.movieDetail = response));
+            .subscribe((response) => this.movieDetail = response);
     }
 
     goBack(): void {
-      this.location.back();
+        this.location.back();
     }
 }

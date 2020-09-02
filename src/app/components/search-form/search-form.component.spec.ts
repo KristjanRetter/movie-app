@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SearchFormComponent } from './search-form.component';
+import { RouterTestingModule } from '@angular/router/testing';
+import { StoreModule } from '@ngrx/store';
 
 describe('SearchFormComponent', () => {
   let component: SearchFormComponent;
@@ -8,6 +10,7 @@ describe('SearchFormComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [RouterTestingModule, StoreModule.forRoot({}), ],
       declarations: [ SearchFormComponent ]
     })
     .compileComponents();
@@ -20,6 +23,9 @@ describe('SearchFormComponent', () => {
   });
 
   it('should create', () => {
+    component.movies = []
+    component.searchWord = 'new';
+    fixture.detectChanges();
     expect(component).toBeTruthy();
   });
 });

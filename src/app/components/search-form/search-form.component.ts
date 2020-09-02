@@ -29,9 +29,12 @@ export class SearchFormComponent implements OnInit {
 
     getMovies(): void {
         this.store.pipe(select('movies')).subscribe((response: any) => {
-            this.searchWord = response.searchWord;
-            this.movies = response.movies;
-            this.error = !this.searchWord || !this.movies;
+            if(response) {
+                this.searchWord = response.searchWord;
+                this.movies = response.movies;
+                this.error = !this.searchWord || !this.movies;
+            }
+        
         });
     }
 
