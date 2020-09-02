@@ -9,4 +9,4 @@ To run the MovieApp on your machine do the following:
 2. ```npm install```
 3. ```npm start```
 
-To run MovieApp's unit test's use:  ````npm test```
+To run MovieApp's unit test's use  ````npm test```
