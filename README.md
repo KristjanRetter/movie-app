@@ -1,6 +1,6 @@
 # MovieApp
 
-The MovieApp enables you to search movies by there name and get information about them.
+The MovieApp enables you to search movies by their name and get information about them.
 
 ## How to run
 
