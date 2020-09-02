@@ -5,7 +5,7 @@ import { MovieDetailComponent } from './pages/movie-detail/movie-detail.componen
 import { MovieListComponent } from './pages/movie-list/movie-list.component';
 
 const routes: Routes = [
-  { path: 'movies/:key', component: MovieListComponent },
+  { path: 'movies/:searchWord', component: MovieListComponent },
   { path: 'detail/:id', component: MovieDetailComponent },
 ];
 

@@ -7,8 +7,8 @@ import { MovieResponse, MovieDetailResponse } from './store/movie.model';
 export class MovieService {
     constructor(private http: HttpClient) { }
 
-    getMovies(keyword: string ): Observable<MovieResponse> {
-        return this.http.get<MovieResponse>(`http://www.omdbapi.com/?apikey=f79aeba3&s=${keyword}`, {});
+    getMovies(searchWord: string ): Observable<MovieResponse> {
+        return this.http.get<MovieResponse>(`http://www.omdbapi.com/?apikey=f79aeba3&s=${searchWord}`, {});
     }
 
     getMovieDetail(id: string): Observable<MovieDetailResponse> {

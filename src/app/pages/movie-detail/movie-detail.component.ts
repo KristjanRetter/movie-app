@@ -1,27 +1,27 @@
 import { animate, style, transition, trigger } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
 
 import { MovieService } from 'src/app/movie.service';
 import { Movie } from 'src/app/store/movie.model';
-
 
 @Component({
     selector: 'app-movie-detail',
     templateUrl: './movie-detail.component.html',
     styleUrls: ['./movie-detail.component.sass'],
     animations: [
-      trigger('fade', [
-        transition('void => *', [
-          style({ opacity: 0 }),
-          animate(300, style({opacity: 1}))
+        trigger('fade', [
+            transition('void => *', [
+                style({ opacity: 0 }),
+                animate(300, style({opacity: 1}))
+            ])
         ])
-      ])
     ]
 })
 
 export class MovieDetailComponent implements OnInit {
-    constructor(private route: ActivatedRoute, public movieService: MovieService) {}
+    constructor(private route: ActivatedRoute, public movieService: MovieService, private location: Location) {}
 
     movieDetail: Movie;
 
@@ -30,5 +30,9 @@ export class MovieDetailComponent implements OnInit {
         this.movieService
             .getMovieDetail(id)
             .subscribe((response) => (this.movieDetail = response));
+    }
+
+    goBack(): void {
+      this.location.back();
     }
 }

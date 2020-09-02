@@ -14,6 +14,7 @@ import { ListItemComponent } from './pages/movie-list/components/list-item/list-
 import { MovieListComponent } from './pages/movie-list/movie-list.component';
 import { MovieEffects } from './store/movie.effect';
 import { reducerMovies } from './store/movies.reducer';
+import { ButtonComponent } from './components/button/button.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { reducerMovies } from './store/movies.reducer';
     MovieDetailComponent,
     MovieListComponent,
     SearchFormComponent,
+    ButtonComponent,
   ],
   imports: [
     HttpClientModule,

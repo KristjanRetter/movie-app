@@ -25,13 +25,13 @@ import { State } from '../../store/movies.reducer';
 export class MovieListComponent implements OnInit {
     constructor( public route: ActivatedRoute,  public movieService: MovieService, private store: Store<State>){}
 
-    key: string;
+    searchWord: string;
     movies: Movie[];
 
     ngOnInit(): void {
         this.store.pipe(select('movies')).subscribe((response: any) => this.movies = response.movies);
-        this.key = this.route.snapshot.paramMap.get('key');
-        this.store.dispatch(SetSearchWord({ payload: this.key }));
-        this.store.dispatch(GetMovies({ payload: this.key }));
+        this.searchWord = this.route.snapshot.paramMap.get('searchWord');
+        this.store.dispatch(SetSearchWord({ payload: this.searchWord }));
+        this.store.dispatch(GetMovies({ payload: this.searchWord }));
     }
 }

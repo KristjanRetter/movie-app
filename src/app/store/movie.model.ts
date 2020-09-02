@@ -40,7 +40,7 @@ export interface MovieDetailResponse {
         Source: string;
         Value: string;
       }
-    ]
+    ];
     Metascore: number;
     imdbRating: number;
     imdbVotes: string;

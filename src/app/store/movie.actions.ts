@@ -16,4 +16,3 @@ export const SetSearchWord = createAction(
     '[SEARCH] - set search word',
     props<{ payload: string }>()
 );
-
